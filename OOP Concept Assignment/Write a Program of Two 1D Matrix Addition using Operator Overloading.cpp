@@ -2,7 +2,7 @@
 using namespace std;
 class addition{
 	
-	int array[5];
+	int arr[5];
 	public:
 		void get()
 		{
@@ -12,7 +12,7 @@ class addition{
 			for(i=0;i<5;i++)
 			{
 				cout<<" ";
-				cin>>array[i];
+				cin>>arr[i];
 			}
 		}
 		
@@ -22,23 +22,26 @@ class addition{
 			cout<<" ";
 			for(i=0;i<5;i++)
 			{
-				cout<<array[i]<<"\t";
+				cout<<arr[i]<<"\t";
 			}
 		}
 		
 		void operator +(addition obj)
 		{
 			int i;
-			addition result[100];
+			int result[5];
 			for(i=0;i<5;i++)
 			{
-				result[i]=array[i]+obj.array[i];
+				result[i]=arr[i]+obj.arr[i];
 			}
 			for(i=0;i<5;i++)
 			{
 				cout<<result[i]<<"\t";
 			}
+			
 		}
+
+		
 };
 int main()
 {
@@ -47,8 +50,12 @@ int main()
 	arr2.get();
 	cout<<"displaying array's";
 	arr1.display();
+	cout<<endl;
 	cout<<"second matrix";
 	arr2.display();
+	cout<<endl;
+	cout<<"result is"<<"\t";
 	arr1+arr2;
+	
 	return 0;
 }

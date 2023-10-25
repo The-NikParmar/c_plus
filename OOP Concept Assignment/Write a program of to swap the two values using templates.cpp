@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
 template <typename T>
-void swap(T& a, T& b) 
+void swap_num(T& a, T& b) 
 {
-  T temp = a;
+  T temp;
+  temp = a;
   a = b;
   b = temp;
+  cout << "After swap: a = " << a << ", b = " << b << endl;
 }
 int main() {
   int a = 1;
@@ -13,9 +15,9 @@ int main() {
 
   cout << "Before swap: a = " << a << ", b = " << b << endl;
 
-  swap(a, b);
+  swap_num(a, b);
 
-  cout << "After swap: a = " << a << ", b = " << b << endl;
+  
 
   return 0;
 }
