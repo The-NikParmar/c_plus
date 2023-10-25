@@ -1,62 +1,55 @@
+
 #include<iostream>
 using namespace std;
-class lnitial{
-	
-	protected:
-	string lacturer_name,course,sub;
-	int no_lacture;
-	
+class details{
+	string name_lecturer[5];
+	string name_subject[5];
+	string name_course[5];
+	int number_lecturers[5];
 	public:
-	 void init()
-	{
-		cin>>course>>sub;
-	}
-     void	lecturers()
-	{
-		cin>>lacturer_name>>no_lacture;
-	}
-};
-class display : public lnitial{
-	
-	public:
-	 void demo()
-	{
-		cout<<"Course Name is :- "<<course;
-		cout<<endl;
+		details()
+		{
+				cout<<"---------- Welcome to lecture management system ----------\n";
+				cout<<"----------------------------------------------------------\n";	
+		}
+		void getdata()
+		{
+			for(int i=0;i<5;i++)
+			{
+				cout<<"Enter name of "<<i+1<<" lecturer :";
+				cin>>name_lecturer[i];
+				cout<<"Enter name of subject :";
+				cin>>name_subject[i];
+				cout<<"Enter name of course :";
+				cin>>name_course[i];
+				cout<<"Enter number of lecturers :";
+				cin>>number_lecturers[i];		
+			}
+		}
+		void display()
+		{
+			for(int i=0;i<5;i++)
+			{
+				cout<<"Lacturer Name is :- "<<name_lecturer[i];
+				cout<<endl;
 		
-		cout<<"\nsubject is :- "<<sub;
-		cout<<endl;
+				cout<<"subject is :- "<<name_subject[i];
+				cout<<endl;
+				
+				cout<<"Course Name is :- "<<name_course[i];
+				cout<<endl;
 		
-		cout<<"\nLacturer Name is :- "<<lacturer_name;
-		cout<<endl;
-		
-		cout<<"\nNumber of Lactuer is :- "<<no_lacture;
-		cout<<endl;
-		
-		cout<<"\n-------------------------------------------------------";
-	}
+				cout<<"Number of Lactuer is :- "<<number_lecturers[i];
+				cout<<endl;
+				cout<<"-----------------------------\n";
+			}
+		}
 };
 int main()
 {
-	display d1[5];
-	int i;
-	cout<<"\n ----------------------  Welcome to  Lecture management System  ----------------------";
-	cout<<endl;
-	for(i=0;i<5;i++)
-	{
-		cout<<"\n Enter Course Name  &&  Subject Name  :-";
-		d1[i].init();
-		
-		cout<<"\n Enter  lacturer Name && Number of Lecture :- ";
-		d1[i].lecturers();
-	}
-	cout<<"\n ----------------------  Details Lecture management System  ----------------------";
-	cout<<endl;
-	for(i=0;i<5;i++)
-	{	
-		cout<<"\nDetails of lactures:- ";
-		d1[i].demo();
-	}
-	
+	details d;
+	d.getdata();
+	cout<<"---------- Details of lecture management system ----------\n";
+	d.display();
 	return 0;
 }
